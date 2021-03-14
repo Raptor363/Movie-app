@@ -1,0 +1,48 @@
+<%- include("../partials/header") %>
+
+<div id="hero-image-single" style="background-image: url('https://images.unsplash.com/photo-1518331539918-7a2dbf839306?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1049&q=80');">
+    <h1 id="hero-title"><b>WATCHER: STAR WARS</b></h1>
+</div>
+
+<section class="container-fluid px-0">
+    <div class="row align-items-center">
+        <div class="col-lg-6 px-0">
+            <div class="clearfix image-section">
+
+                <div class="img-fluid poster-wrapper movie-img">
+                <img src="data:image/<%=movie.movieImage.contentType%>;base64,
+                <%=movie.movieImage.data.toString('base64')%>" class="img-responsive">
+            </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="py-3">
+                <div class="title-section">
+                    <h2>Title: <%= movie.title%></h2>
+                    <h4 style="padding: 2px;">Ratings: <%= movie.rate%>/10</h4>
+                </div>
+                <div class="comment-section">
+                    <h3>Reviews</h3>
+                    <div class="text-right">
+                        <a class="btn buttoncom" href="/api/movies/<%= movie._id%>/comments/new">Comment</a>
+                    </div>
+                    <hr>
+                    <% movie.comments.forEach(function(comment){ %>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><%= comment.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                                <p>
+                                    <%=comment.text%>
+                                </p>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<%- include("../partials/footer") %>

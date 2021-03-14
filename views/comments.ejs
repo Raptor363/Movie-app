@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/comment.css">
+    <title>WATCHER</title>
+</head>
+<body>
+    
+      
+<nav class="navbar navbar-fixed-top">
+
+	<div class="content-padding">
+
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="/api/movies">Home</a></li>
+            <li><a href="/api/user/login">Login</a></li>
+            <li><a href="/api/user/register">Sign up</a></li>
+		</ul>
+
+	</div>
+
+</nav>
+
+<div class="container">
+	<div class="container__item">
+        <form action="/api/movies/<%=movie._id %>/comments" method="POST">
+			<div class="form-group">
+			    <input class="form__field" type="text" name="text" placeholder="your comment">
+                <button type="submit" class="btn btn--primary btn--inside uppercase">Submit</button>
+            </div>
+		</form>
+	</div>
+	
+	<div class="container__item container__item--bottom">
+        <a href="/api/movies">Back to Movies</a>
+	</div>
+</div>
+
+<%- include("partials/footer") %>

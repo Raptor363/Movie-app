@@ -1,0 +1,38 @@
+<%- include("./partials/header") %>
+
+<div class="container">
+    <div class="left">
+      <div class="header">
+        <h2>WATCHER: STARWARS</h2>
+      </div>
+        <form action="/api/user/login" method="POST">
+            <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  required
+                  name="email"
+                  placeholder="email"
+                  required
+                />
+              </div>
+            <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  required
+                  name="password"
+                  placeholder="password"
+                  required
+                />
+              </div>    
+          <div class="form-group">
+              <button>
+                  SIGN IN
+              </button>
+          </div>
+        </form>
+    </div>
+    <div class="right"></div>
+</div>
+<%- include("./partials/footer") %>
